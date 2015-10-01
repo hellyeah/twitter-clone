@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (User.currentUser != nil) {
             // Go to the logged in screen
             print("current user detected \(User.currentUser?.name)")
-            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+            let vc = storyboard.instantiateViewControllerWithIdentifier("NavViewController") as UIViewController
             //reset root view controller to whatever storyboard we want
             //if we're logged in, we want root view controller to become Tweets view
             window?.rootViewController = vc
