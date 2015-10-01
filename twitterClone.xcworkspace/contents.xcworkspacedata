@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:User.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Tweet.swift">
+   </FileRef>
+   <FileRef
       location = "group:twitterClone.xcodeproj">
    </FileRef>
    <FileRef
