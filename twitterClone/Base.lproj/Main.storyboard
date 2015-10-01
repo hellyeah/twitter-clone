@@ -39,10 +39,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Tweets View Controller-->
         <scene sceneID="oio-zD-dsX">
             <objects>
-                <viewController id="S7z-nT-UqB" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetsViewController" id="S7z-nT-UqB" customClass="TweetsViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ydv-kO-aei"/>
                         <viewControllerLayoutGuide type="bottom" id="zsO-sL-pnG"/>
@@ -50,8 +50,22 @@
                     <view key="view" contentMode="scaleToFill" id="scW-kk-8eg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O3h-Ao-Zd5">
+                                <rect key="frame" x="238" y="285" width="124" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log Out of Twitter"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="S7z-nT-UqB" eventType="touchUpInside" id="Bl6-fA-XuO"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="O3h-Ao-Zd5" firstAttribute="centerY" secondItem="scW-kk-8eg" secondAttribute="centerY" id="4qz-UD-nuI"/>
+                            <constraint firstItem="O3h-Ao-Zd5" firstAttribute="centerX" secondItem="scW-kk-8eg" secondAttribute="centerX" id="nEq-Rk-HFa"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Peg-u6-ZOP" userLabel="First Responder" sceneMemberID="firstResponder"/>

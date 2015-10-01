@@ -12,17 +12,32 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    //remember that storyboard is just an XML file parsed
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
 
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+
         if (User.currentUser != nil) {
             // Go to the logged in screen
-            print("current user detected")
+            print("current user detected \(User.currentUser?.name)")
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+            //reset root view controller to whatever storyboard we want
+            //if we're logged in, we want root view controller to become Tweets view
+            window?.rootViewController = vc
         }
 
         return true
+    }
+
+    func userDidLogout () {
+        let vc = storyboard.instantiateInitialViewController()
+        //reset root view controller to whatever storyboard we want
+        //if we're logged in, we want root view controller to become Tweets view
+        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(application: UIApplication) {
