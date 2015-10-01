@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckd-fA-fnC">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ckd-fA-fnC">
                                 <rect key="frame" x="238" y="285" width="125" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Login With Twitter"/>
@@ -27,6 +27,10 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ckd-fA-fnC" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Bh3-4Y-C00"/>
+                            <constraint firstItem="ckd-fA-fnC" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Gk1-N3-skm"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="S7z-nT-UqB" kind="presentation" identifier="loginSegue" id="CA2-F0-pCU"/>
