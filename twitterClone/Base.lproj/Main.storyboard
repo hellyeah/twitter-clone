@@ -123,7 +123,7 @@
                                             <outlet property="timestampLabel" destination="ute-Gq-15j" id="hxW-rW-Sbk"/>
                                             <outlet property="tweetLabel" destination="jsS-ww-lfV" id="V0K-w3-Qw6"/>
                                             <outlet property="usernameLabel" destination="R3H-BN-O6f" id="OPH-DR-c5l"/>
-                                            <segue destination="cfS-Sy-0CU" kind="show" id="W6S-GJ-jZG"/>
+                                            <segue destination="cfS-Sy-0CU" kind="show" identifier="selectTweet" id="W6S-GJ-jZG"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -154,10 +154,10 @@
             </objects>
             <point key="canvasLocation" x="2159" y="306"/>
         </scene>
-        <!--View Controller-->
+        <!--Tweet View Controller-->
         <scene sceneID="4bT-x5-xGg">
             <objects>
-                <viewController id="cfS-Sy-0CU" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TweetViewController" id="cfS-Sy-0CU" customClass="TweetViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="j2O-Ue-tfh"/>
                         <viewControllerLayoutGuide type="bottom" id="Fwe-hm-WLL"/>

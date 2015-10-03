@@ -81,4 +81,14 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // do something here
         //segue and transfer data
     }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let indexPath = self.tableView.indexPathForCell(sender as! TweetCell)
+        if segue.identifier == "selectTweet" {
+            let vc = segue.destinationViewController as? TweetViewController
+            vc!.tweet = self.tweets![indexPath!.row]
+
+
+        }
+    }
 }
