@@ -11,6 +11,7 @@ import UIKit
 class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     var tweets: [Tweet]?
+    var refreshControl: UIRefreshControl!
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -18,6 +19,15 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableViewAutomaticDimension
+
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "populateTimeline", forControlEvents: UIControlEvents.ValueChanged)
+
+        let dummyTableVC = UITableViewController()
+        dummyTableVC.tableView = tableView
+        dummyTableVC.refreshControl = refreshControl
 
 
 //        self.title = "Your Title"
@@ -28,10 +38,18 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //
 //        self.navigationItem.leftBarButtonItem = homeButton
 //        self.navigationItem.rightBarButtonItem = logButton
+        populateTimeline()
+    }
 
+    func populateTimeline () {
         TwitterClient.sharedInstance.homeTimelineWithParams(nil) { (tweets, error) -> () in
-            self.tweets = tweets
-            self.tableView.reloadData()
+            if error != nil {
+                print(error)
+            } else {
+                self.tweets = tweets
+                self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
+            }
         }
     }
 
@@ -46,7 +64,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     //TableView Setup
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as? TweetCell
-        cell?.tweetLabel.text = self.tweets![indexPath.row].text
+        //cell?.tweetLabel.text = self.tweets![indexPath.row].text
+        cell!.tweet = self.tweets![indexPath.row]
         return cell!
     }
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -55,5 +74,11 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         } else {
             return self.tweets!.count
         }
+    }
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        // do something here
+        //segue and transfer data
     }
 }

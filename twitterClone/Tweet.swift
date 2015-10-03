@@ -9,13 +9,14 @@
 import UIKit
 
 class Tweet: NSObject {
-    var user: User?
+    var user: [String:AnyObject]?
     var text: String?
     var createdAtString: String?
     var createdAt: NSDate?
     
     init(dictionary: NSDictionary) {
-        user = User(dictionary: dictionary["user"] as! NSDictionary)
+        //user = User(dictionary: dictionary["user"] as! NSDictionary)
+        user = dictionary["user"] as? [String:AnyObject]
         text = dictionary["text"] as? String
         createdAtString = dictionary["created_at"] as? String
         
