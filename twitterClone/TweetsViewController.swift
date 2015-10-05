@@ -21,10 +21,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableViewAutomaticDimension
-
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: "populateTimeline", forControlEvents: UIControlEvents.ValueChanged)
-
+        
         let dummyTableVC = UITableViewController()
         dummyTableVC.tableView = tableView
         dummyTableVC.refreshControl = refreshControl
@@ -39,8 +39,10 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 //        self.navigationItem.leftBarButtonItem = homeButton
 //        self.navigationItem.rightBarButtonItem = logButton
         populateTimeline()
+        
+        tableView.reloadData()
     }
-
+    
     func populateTimeline () {
         TwitterClient.sharedInstance.homeTimelineWithParams(nil) { (tweets, error) -> () in
             if error != nil {
@@ -75,20 +77,20 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return self.tweets!.count
         }
     }
-
+    
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         // do something here
         //segue and transfer data
     }
-
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let indexPath = self.tableView.indexPathForCell(sender as! TweetCell)
         if segue.identifier == "selectTweet" {
             let vc = segue.destinationViewController as? TweetViewController
+            print(indexPath!.row)
             vc!.tweet = self.tweets![indexPath!.row]
-
-
+            print(vc?.tweet)
         }
     }
 }

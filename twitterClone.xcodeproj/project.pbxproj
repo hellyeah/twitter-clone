@@ -21,6 +21,7 @@
 		9F5B52601BBD152500D58ECE /* twitterCloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B525F1BBD152500D58ECE /* twitterCloneTests.swift */; };
 		9F5B526B1BBD152500D58ECE /* twitterCloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F5B526A1BBD152500D58ECE /* twitterCloneUITests.swift */; };
 		9F9AC9901BC07691007B8AE2 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AC98F1BC07691007B8AE2 /* TweetViewController.swift */; };
+		9F9AC9921BC07E6A007B8AE2 /* TweetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AC9911BC07E6A007B8AE2 /* TweetDetailCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		9F5B526A1BBD152500D58ECE /* twitterCloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = twitterCloneUITests.swift; sourceTree = "<group>"; };
 		9F5B526C1BBD152500D58ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9F9AC98F1BC07691007B8AE2 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		9F9AC9911BC07E6A007B8AE2 /* TweetDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailCell.swift; sourceTree = "<group>"; };
 		CFAE48E26B830315ADD9C57F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				9F5B4FBD1BBD9BC5004BAA23 /* TweetCell.swift */,
+				9F9AC9911BC07E6A007B8AE2 /* TweetDetailCell.swift */,
 				9F58B9001BBD2FB800C3DC71 /* User.swift */,
 				9F58B9011BBD2FB800C3DC71 /* Tweet.swift */,
 			);
@@ -358,6 +361,7 @@
 				9F5B4FBE1BBD9BC5004BAA23 /* TweetCell.swift in Sources */,
 				9F58B9031BBD2FB800C3DC71 /* Tweet.swift in Sources */,
 				9F5B4FBC1BBD3FEE004BAA23 /* TweetsViewController.swift in Sources */,
+				9F9AC9921BC07E6A007B8AE2 /* TweetDetailCell.swift in Sources */,
 				9F9AC9901BC07691007B8AE2 /* TweetViewController.swift in Sources */,
 				9F5B524D1BBD152500D58ECE /* ViewController.swift in Sources */,
 				9F58B8FE1BBD16E900C3DC71 /* TwitterClient.swift in Sources */,
@@ -506,6 +510,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = twitterClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = codepath.twitterClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -521,6 +526,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = twitterClone/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = codepath.twitterClone;
 				PRODUCT_NAME = "$(TARGET_NAME)";

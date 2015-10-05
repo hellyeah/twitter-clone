@@ -34,7 +34,52 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                 completion(tweets: nil, error: error)
         })
     }
-
+    
+    func retweet (id: String, completion: (response: String?, error: NSError?) -> ()) {
+        //https://api.twitter.com/1.1/statuses/retweet/:id.json
+        //parameters: {id: "\(id)"}
+        //let params: NSDictionary? = ["id": id!]
+        //let idString = id.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+        //print(idString)
+        //let urlString = "1.1/statuses/retweet/" + idString + ".json"
+        //print(urlString)
+        POST("1.1/statuses/retweet/\(id).json", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            //completion(response: (((response as! [NSDictionary])[0]["id_str"]) as? String), error: nil)
+            completion(response: "blah", error: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                print("error retweeting tweet \(id)")
+                completion(response: nil, error: error)
+        })
+    }
+    
+    func favorite (id: String, completion: (response: String?, error: NSError?) -> ()) {
+        //https://api.twitter.com/1.1/statuses/retweet/:id.json
+        //parameters: {id: "\(id)"}
+        let params: NSDictionary? = ["id": id]
+        POST("1.1/favorites/create.json?id=\(id)", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            completion(response: ((response as! [NSDictionary])[0]["id_str"]) as? String, error: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                print("error favoriting tweet \(id)")
+                completion(response: nil, error: error)
+        })
+    }
+//
+//    //takes dictionary of tweets as params for pagination to check against
+//    func composeTweet(status: String?, reply_id: String?, completion: (error: NSError?) -> ()) {
+//        POST("1.1/statuses/l", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+//            
+//            completion(, error: nil)
+//            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+//                print("error composing tweet")
+//                completion(tweets: nil, error: error)
+//        })
+//    }
+//    
+//    //same as compose tweet but inlcludes in_reply_to_status_id variable
+//    func composeReply() {
+//        
+//    }
+    
     func loginWithCompletion(completion: (user: User?, error: NSError?) -> ()) {
         loginCompletion = completion
 
