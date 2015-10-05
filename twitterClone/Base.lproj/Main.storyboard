@@ -67,17 +67,37 @@
                                     <action selector="tapTweet:" destination="M4T-kr-Ctp" eventType="touchUpInside" id="G7M-b7-dyY"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HyB-Yp-Sa2">
+                                <rect key="frame" x="276" y="401" width="48" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="tapCancel:" destination="M4T-kr-Ctp" eventType="touchUpInside" id="RKt-YZ-4gT"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="HyB-Yp-Sa2" firstAttribute="top" secondItem="lYc-Wh-f9e" secondAttribute="bottom" constant="8" id="GBe-bf-3Kk"/>
                             <constraint firstItem="lYc-Wh-f9e" firstAttribute="top" secondItem="vcx-hO-RJR" secondAttribute="bottom" constant="8" id="MA2-7t-Rbf"/>
                             <constraint firstItem="vcx-hO-RJR" firstAttribute="top" secondItem="cm5-gu-b2z" secondAttribute="bottom" constant="8" id="P7H-Sg-A2H"/>
+                            <constraint firstItem="HyB-Yp-Sa2" firstAttribute="centerX" secondItem="n1l-2J-0N7" secondAttribute="centerX" id="PfH-yr-gmb"/>
+                            <constraint firstItem="HyB-Yp-Sa2" firstAttribute="leading" secondItem="lYc-Wh-f9e" secondAttribute="trailing" constant="-19" id="U2Y-y4-CPe"/>
+                            <constraint firstItem="HyB-Yp-Sa2" firstAttribute="top" secondItem="lYc-Wh-f9e" secondAttribute="bottom" constant="273" id="ZKA-kI-ENO"/>
                             <constraint firstItem="lYc-Wh-f9e" firstAttribute="centerY" secondItem="n1l-2J-0N7" secondAttribute="centerY" id="dR7-ty-Do3"/>
                             <constraint firstItem="lYc-Wh-f9e" firstAttribute="centerX" secondItem="n1l-2J-0N7" secondAttribute="centerX" id="nHQ-dV-4jO"/>
                             <constraint firstAttribute="trailing" secondItem="vcx-hO-RJR" secondAttribute="trailing" constant="8" id="neJ-Jy-47o"/>
+                            <constraint firstItem="U5h-RM-FmR" firstAttribute="top" secondItem="HyB-Yp-Sa2" secondAttribute="bottom" constant="169" id="rNg-yh-I13"/>
                             <constraint firstItem="vcx-hO-RJR" firstAttribute="leading" secondItem="n1l-2J-0N7" secondAttribute="leading" constant="8" id="waC-or-Wyw"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="GBe-bf-3Kk"/>
+                                <exclude reference="U2Y-y4-CPe"/>
+                                <exclude reference="ZKA-kI-ENO"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="tweetTextField" destination="vcx-hO-RJR" id="KfW-m8-z6M"/>
@@ -320,6 +340,7 @@
                                                     <state key="normal" title="Reply"/>
                                                     <connections>
                                                         <action selector="tapReply:" destination="dOm-Vc-WPN" eventType="touchUpInside" id="OBr-gs-w3X"/>
+                                                        <segue destination="M4T-kr-Ctp" kind="presentation" identifier="popToReplyModal" id="kDH-Le-TB5"/>
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08g-iN-b4B">
@@ -395,4 +416,7 @@
             <point key="canvasLocation" x="1347" y="306"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="kDH-Le-TB5"/>
+    </inferredMetricsTieBreakers>
 </document>

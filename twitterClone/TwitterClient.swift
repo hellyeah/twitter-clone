@@ -69,7 +69,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
     func composeTweet(status: String?, reply_id: String?, completion: (response: String?, error: NSError?) -> ()) {
         var params: Dictionary = ["status": status!]
         if reply_id != nil {
-            params["]in_reply_to_status_id"] = reply_id!
+            params["in_reply_to_status_id"] = reply_id!
+            print(params)
         }
         POST("1.1/statuses/update.json", parameters: params as NSDictionary, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
             

@@ -46,5 +46,12 @@ class TweetViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "popToReplyModal" {
+            let vc = segue.destinationViewController as? ComposeViewController
+            vc!.id = self.tweet.id_as_string
+        }
+    }
+    
 }
 

@@ -9,17 +9,23 @@
 import UIKit
 
 class ComposeViewController: UIViewController {
+    var id: String? = nil
     @IBOutlet weak var tweetTextField: UITextField!
     @IBAction func tapTweet(sender: AnyObject) {
         //call tweet function with text in text field
-        TwitterClient.sharedInstance.composeTweet(self.tweetTextField.text! as String, reply_id: nil) { (tweets, error) -> () in
+        print(id)
+        TwitterClient.sharedInstance.composeTweet(self.tweetTextField.text! as String, reply_id: self.id!) { (tweets, error) -> () in
             if error != nil {
                 print(error)
             } else {
                 print("tweet tweet")
+                self.dismissViewControllerAnimated(true, completion: nil)
             }
         }
         
     }
     
+    @IBAction func tapCancel(sender: AnyObject) {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
