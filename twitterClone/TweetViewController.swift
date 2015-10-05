@@ -31,13 +31,19 @@ class TweetViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     //Set up table view
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TweetDetailCell") as? TweetDetailCell
-        cell!.tweet = tweet
-        return cell!
+        if indexPath.row == 0 {
+            let cell = tableView.dequeueReusableCellWithIdentifier("TweetDetailCell") as? TweetDetailCell
+            cell!.tweet = tweet
+            return cell!
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("FeatureCell") as? FeatureCell
+            cell!.tweet = tweet
+            return cell!
+        }
     }
 
 }
