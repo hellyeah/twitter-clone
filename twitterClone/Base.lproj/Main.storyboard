@@ -41,6 +41,52 @@
             </objects>
             <point key="canvasLocation" x="429" y="306"/>
         </scene>
+        <!--Compose View Controller-->
+        <scene sceneID="zG0-zM-lMd">
+            <objects>
+                <viewController storyboardIdentifier="ComposeViewController" title="Compose View Controller" id="M4T-kr-Ctp" customClass="ComposeViewController" customModule="twitterClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cm5-gu-b2z"/>
+                        <viewControllerLayoutGuide type="bottom" id="U5h-RM-FmR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="n1l-2J-0N7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vcx-hO-RJR">
+                                <rect key="frame" x="20" y="43" width="511" height="30"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lYc-Wh-f9e">
+                                <rect key="frame" x="254" y="98" width="42" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Tweet"/>
+                                <connections>
+                                    <action selector="tapTweet:" destination="M4T-kr-Ctp" eventType="touchUpInside" id="G7M-b7-dyY"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lYc-Wh-f9e" firstAttribute="top" secondItem="vcx-hO-RJR" secondAttribute="bottom" constant="8" id="MA2-7t-Rbf"/>
+                            <constraint firstItem="vcx-hO-RJR" firstAttribute="top" secondItem="cm5-gu-b2z" secondAttribute="bottom" constant="8" id="P7H-Sg-A2H"/>
+                            <constraint firstItem="lYc-Wh-f9e" firstAttribute="centerY" secondItem="n1l-2J-0N7" secondAttribute="centerY" id="dR7-ty-Do3"/>
+                            <constraint firstItem="lYc-Wh-f9e" firstAttribute="centerX" secondItem="n1l-2J-0N7" secondAttribute="centerX" id="nHQ-dV-4jO"/>
+                            <constraint firstAttribute="trailing" secondItem="vcx-hO-RJR" secondAttribute="trailing" constant="8" id="neJ-Jy-47o"/>
+                            <constraint firstItem="vcx-hO-RJR" firstAttribute="leading" secondItem="n1l-2J-0N7" secondAttribute="leading" constant="8" id="waC-or-Wyw"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tweetTextField" destination="vcx-hO-RJR" id="KfW-m8-z6M"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wIh-JT-stg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2503" y="-417"/>
+        </scene>
         <!--Tweets View Controller Scene-->
         <scene sceneID="oio-zD-dsX">
             <objects>
@@ -153,6 +199,12 @@
                                 <action selector="onLogout:" destination="S7z-nT-UqB" id="uu9-Wh-Zyw"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Compose" id="A7X-uW-vh9">
+                            <connections>
+                                <action selector="composeTweet:" destination="S7z-nT-UqB" id="voG-NC-fr9"/>
+                                <segue destination="M4T-kr-Ctp" kind="presentation" id="YwS-Ah-f0N"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="2uX-NZ-Y30" id="ZHF-fR-TBc"/>
@@ -174,7 +226,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="172" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vwm-dF-lEa">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="172" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vwm-dF-lEa">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,6 +362,11 @@
                             <constraint firstAttribute="trailing" secondItem="vwm-dF-lEa" secondAttribute="trailing" id="qjh-IP-GCm"/>
                         </constraints>
                     </view>
+                    <toolbarItems>
+                        <barButtonItem title="Item" id="emr-jb-Dws"/>
+                        <barButtonItem title="Item" id="FiU-0N-dI8"/>
+                    </toolbarItems>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="tableView" destination="vwm-dF-lEa" id="Skg-xn-oII"/>
                     </connections>

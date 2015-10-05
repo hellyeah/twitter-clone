@@ -64,18 +64,22 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
                 completion(response: nil, error: error)
         })
     }
+
+    //takes dictionary of tweets as params for pagination to check against
+    func composeTweet(status: String?, reply_id: String?, completion: (response: String?, error: NSError?) -> ()) {
+        var params: Dictionary = ["status": status!]
+        if reply_id != nil {
+            params["]in_reply_to_status_id"] = reply_id!
+        }
+        POST("1.1/statuses/update.json", parameters: params as NSDictionary, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            
+            completion(response: "blah", error: nil)
+            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
+                print("error composing tweet")
+                completion(response: nil, error: error)
+        })
+    }
 //
-//    //takes dictionary of tweets as params for pagination to check against
-//    func composeTweet(status: String?, reply_id: String?, completion: (error: NSError?) -> ()) {
-//        POST("1.1/statuses/l", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-//            
-//            completion(, error: nil)
-//            }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
-//                print("error composing tweet")
-//                completion(tweets: nil, error: error)
-//        })
-//    }
-//    
 //    //same as compose tweet but inlcludes in_reply_to_status_id variable
 //    func composeReply() {
 //        

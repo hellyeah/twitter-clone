@@ -63,6 +63,9 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         User.currentUser?.logout()
     }
 
+    @IBAction func composeTweet(sender: AnyObject) {
+        
+    }
     //TableView Setup
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("TweetCell") as? TweetCell
@@ -85,8 +88,8 @@ class TweetsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let indexPath = self.tableView.indexPathForCell(sender as! TweetCell)
         if segue.identifier == "selectTweet" {
+            let indexPath = self.tableView.indexPathForCell(sender as! TweetCell)
             let vc = segue.destinationViewController as? TweetViewController
             print(indexPath!.row)
             vc!.tweet = self.tweets![indexPath!.row]

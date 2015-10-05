@@ -23,6 +23,7 @@
 		9F9AC9901BC07691007B8AE2 /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AC98F1BC07691007B8AE2 /* TweetViewController.swift */; };
 		9F9AC9921BC07E6A007B8AE2 /* TweetDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AC9911BC07E6A007B8AE2 /* TweetDetailCell.swift */; };
 		9F9AC9941BC2500D007B8AE2 /* FeatureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AC9931BC2500D007B8AE2 /* FeatureCell.swift */; };
+		9F9AC9961BC256FC007B8AE2 /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F9AC9951BC256FC007B8AE2 /* ComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		9F9AC98F1BC07691007B8AE2 /* TweetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
 		9F9AC9911BC07E6A007B8AE2 /* TweetDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetDetailCell.swift; sourceTree = "<group>"; };
 		9F9AC9931BC2500D007B8AE2 /* FeatureCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FeatureCell.swift; path = ../FeatureCell.swift; sourceTree = "<group>"; };
+		9F9AC9951BC256FC007B8AE2 /* ComposeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
 		CFAE48E26B830315ADD9C57F /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 				9F5B524A1BBD152500D58ECE /* AppDelegate.swift */,
 				9F5B524C1BBD152500D58ECE /* ViewController.swift */,
 				9F5B524E1BBD152500D58ECE /* Main.storyboard */,
+				9F9AC9951BC256FC007B8AE2 /* ComposeViewController.swift */,
 				9F5B4FBB1BBD3FEE004BAA23 /* TweetsViewController.swift */,
 				9F9AC98F1BC07691007B8AE2 /* TweetViewController.swift */,
 				9F5B52511BBD152500D58ECE /* Assets.xcassets */,
@@ -366,6 +369,7 @@
 				9F5B4FBC1BBD3FEE004BAA23 /* TweetsViewController.swift in Sources */,
 				9F9AC9921BC07E6A007B8AE2 /* TweetDetailCell.swift in Sources */,
 				9F9AC9901BC07691007B8AE2 /* TweetViewController.swift in Sources */,
+				9F9AC9961BC256FC007B8AE2 /* ComposeViewController.swift in Sources */,
 				9F5B524D1BBD152500D58ECE /* ViewController.swift in Sources */,
 				9F58B8FE1BBD16E900C3DC71 /* TwitterClient.swift in Sources */,
 				9F9AC9941BC2500D007B8AE2 /* FeatureCell.swift in Sources */,
