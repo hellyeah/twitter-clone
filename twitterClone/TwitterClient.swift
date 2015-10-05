@@ -57,7 +57,8 @@ class TwitterClient: BDBOAuth1RequestOperationManager {
         //parameters: {id: "\(id)"}
         let params: NSDictionary? = ["id": id]
         POST("1.1/favorites/create.json?id=\(id)", parameters: params, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
-            completion(response: ((response as! [NSDictionary])[0]["id_str"]) as? String, error: nil)
+            //completion(response: ((response as! [NSDictionary])[0]["id_str"]) as? String, error: nil)
+            completion(response: "blah", error: nil)
             }, failure: { (operation: AFHTTPRequestOperation!, error: NSError!) -> Void in
                 print("error favoriting tweet \(id)")
                 completion(response: nil, error: error)
